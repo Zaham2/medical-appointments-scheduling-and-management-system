@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+  db:
+    # image: postgres:latest
+    build:
+      context: ./db
+      dockerfile: db.dockerfile
+    environment:
+      POSTGRES_PASSWORD: 12345679
+      # POSTGRES_USER: dev
+      POSTGRES_DB: medical_db
+    ports:
+      - "5432:5432"
+    # command: postgres
+
+    # psql -d medical_db -U dev
+
+  backend:
+    build: ./server
+    command: node index.js
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://dev:12345679@db:5432/medical_db
+
+  # frontend:
+  #   build: ./client
+  #   command: npm run dev
+  #   ports:
+  #     - "3030:80"
+  #   depends_on:
+  #     - backend
