@@ -7,9 +7,9 @@ services:
       context: ./db
       dockerfile: db.dockerfile
     environment:
-      POSTGRES_PASSWORD: 12345679
+      POSTGRES_PASSWORD: 87654321
       # POSTGRES_USER: dev
-      POSTGRES_DB: medical_db
+      # POSTGRES_DB: medical_db
     ports:
       - "5432:5432"
     # command: postgres

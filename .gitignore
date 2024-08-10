@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 
 .env
+google-client-credentials.json
+localhost-key.pem
+localhost.pem
+
