@@ -1,0 +1,64 @@
+@use './assets/scss/index.scss' as *;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body, html {
+    background-color: #{$lightblue};
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.container {
+    height: calc(100vh - 20px);
+    width: calc(100% - 20px);
+    background-color: #{$white};
+}
+
+.top-items {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    height: 30%;
+    margin: 8px;
+}
+
+.appointments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.base-dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+}
+
+h1 {
+    margin: 0;
+}

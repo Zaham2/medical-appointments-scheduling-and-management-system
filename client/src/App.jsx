@@ -1,16 +1,21 @@
 import GoogleAuth from "./features/google-auth";
-import Login from "./features/google-auth/Login";
+import Dashboards from "./features/dashboard";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Landing from "./features/landing";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Landing />} />
-        <Route path="/auth" element={<GoogleAuth />} />
-      </Routes>
-    </Router>
+    <div className="flex-container">
+      <div className="container">
+        <Router>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/auth" element={<GoogleAuth />} />
+            <Route path="/dashboards" element={<Dashboards />} />
+          </Routes>
+        </Router>
+      </div>
+    </div>
   );
 }
 
